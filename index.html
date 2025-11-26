@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collections</title>
+  <link rel="stylesheet" href="collection-style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo">Amagi AR</div>
+
+    <ul class="menu">
+      <li><i class="fa fa-home"></i> Home</li>
+      <li><i class="fa fa-inbox"></i> Inbox</li>
+      <li><i class="fa fa-users"></i> Customers</li>
+      <li><i class="fa fa-file-invoice"></i> Transactions</li>
+      <li class="active"><i class="fa fa-database"></i> Collections</li>
+      <li><i class="fa fa-chart-line"></i> Reports</li>
+      <li><i class="fa fa-wallet"></i> Cash App</li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- Top Navbar -->
+    <nav class="topnav">
+      <div class="left"><i class="fa fa-bars"></i> Collections</div>
+
+      <div class="right">
+        <input type="text" placeholder="Search">
+        <i class="fa fa-bell"></i>
+        <i class="fa fa-user-circle"></i>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <section class="page">
+
+      <!-- Top Actions -->
+      <div class="actions">
+        <input type="text" class="search-box" placeholder="Search collections.">
+        <div class="buttons">
+          <button class="date-btn"><i class="fa fa-calendar"></i> Select Date Range</button>
+          <button class="filter-btn"><i class="fa fa-filter"></i> Filter</button>
+          <button class="export-btn"><i class="fa fa-download"></i> Export</button>
+        </div>
+      </div>
+
+      <!-- Tabs 
+      <div class="tabs">
+        <div class="tab active" data-target="collector">Collector Management</div>
+        <div class="tab" data-target="disputes">Disputes</div>
+      </div>-->
+      <!-- Collector Management Table -->
+      <div class="table-wrapper tab-content" id="collector">
+        <table>
+          <thead>
+            <tr>
+              <th>Collection Owner</th>
+              <th>Total Customers</th>
+              <th>Open Invoices</th>
+              <th>Reporting Manager</th>
+              <th>Current Outstanding</th>
+              <th>MTD Collections</th>
+              <th>Disputes Assigned</th>
+              <th>Tasks</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>User 1</td>
+              <td>45</td>
+              <td>78</td>
+              <td>Sarah Johnson</td>
+              <td>$1,250,000</td>
+              <td>$430,000</td>
+              <td><span class="badge blue">8</span></td>
+              <td><span class="badge yellow">12</span></td>
+            </tr>
+
+            <tr>
+              <td>User 2</td>
+              <td>38</td>
+              <td>65</td>
+              <td>Sarah Johnson</td>
+              <td>$980,000</td>
+              <td>$365,000</td>
+              <td><span class="badge blue">6</span></td>
+              <td><span class="badge yellow">9</span></td>
+            </tr>
+
+            <tr>
+              <td>User 3</td>
+              <td>42</td>
+              <td>72</td>
+              <td>David Wilson</td>
+              <td>$1,100,000</td>
+              <td>$395,000</td>
+              <td><span class="badge blue">5</span></td>
+              <td><span class="badge yellow">7</span></td>
+            </tr>
+
+            <tr>
+              <td>User 4</td>
+              <td>35</td>
+              <td>58</td>
+              <td>David Wilson</td>
+              <td>$850,000</td>
+              <td>$310,000</td>
+              <td><span class="badge blue">3</span></td>
+              <td><span class="badge yellow">5</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Disputes Table 
+      <div class="table-wrapper tab-content hidden" id="disputes">
+
+        <div class="dispute-header">
+          <button class="create-dispute"><i class="fa fa-plus"></i> Create Dispute</button>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Dispute ID</th>
+              <th>Customer</th>
+              <th>Dispute Title</th>
+              <th>Created Date</th>
+              <th>Open Days</th>
+              <th>Dispute Amount</th>
+              <th>Dispute Type</th>
+              <th>Status</th>
+              <th>Associated Invoices</th>
+              <th>Dispute Owner</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <tr>
+              <td class="bold">DSP 9456</td>
+              <td>Acme Corporation</td>
+              <td>INV-2025 1234 - Rate Discrepancy</td>
+              <td>05-04-2025</td>
+              <td><span class="red">20 days</span></td>
+              <td>$5,500</td>
+              <td><span class="tag yellow-tag">Rate Discrepancy</span></td>
+              <td><span class="status open">Open</span></td>
+              <td>INV-2025-1234</td>
+              <td>User 1</td>
+              <td><button class="view-btn">View</button></td>
+            </tr>
+
+            <tr>
+              <td class="bold">DSP 9457</td>
+              <td>XYZ Media Services</td>
+              <td>INV-2025 1235 - Go Live Date</td>
+              <td>06-04-2025</td>
+              <td>15 days</td>
+              <td>$12,000</td>
+              <td><span class="tag blue-tag">Go Live Date</span></td>
+              <td><span class="status progress">In Progress</span></td>
+              <td>INV-2025-1235</td>
+              <td>User 2</td>
+              <td><button class="view-btn">View</button></td>
+            </tr>
+
+            <tr>
+              <td class="bold">DSP 9458</td>
+              <td>MediaTech Inc.</td>
+              <td>INV-2025 1236 - Setup Fee</td>
+              <td>07-04-2025</td>
+              <td>12 days</td>
+              <td>$2,500</td>
+              <td><span class="tag orange-tag">Setup Fee</span></td>
+              <td><span class="status review">Pending Review</span></td>
+              <td>INV-2025-1236</td>
+              <td>User 2</td>
+              <td><button class="view-btn">View</button></td>
+            </tr>
+
+            <tr>
+              <td class="bold">DSP 9459</td>
+              <td>StreamFlow Ltd.</td>
+              <td>INV-2025 1237 Duplicate Charge</td>
+              <td>08-04-2025</td>
+              <td><span class="red">25 days</span></td>
+              <td>$8,000</td>
+              <td><span class="tag purple-tag">Duplicate Charge</span></td>
+              <td><span class="status closed">Closed</span></td>
+              <td>INV-2025-1237</td>
+              <td>User 1</td>
+              <td><button class="view-btn">View</button></td>
+            </tr>
+
+            <tr>
+              <td class="bold">DSP 9460</td>
+              <td>Global Broadcasting</td>
+              <td>INV-2025 1238 - Churn from Sales</td>
+              <td>09-04-2025</td>
+              <td>18 days</td>
+              <td>$15,000</td>
+              <td><span class="tag green-tag">Churn from Sales</span></td>
+              <td><span class="status assigned">Assigned</span></td>
+              <td>INV-2025-1238</td>
+              <td>User 1</td>
+              <td><button class="view-btn">View</button></td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>-->
+
+      <!-- DISPUTE POPUP MODAL -->
+      <div id="disputeModal" class="modal hidden">
+        <div class="modal-content">
+          <!-- Close Button -->
+          <span class="modal-close">&times;</span>
+
+          <!-- HEADER -->
+          <h2 class="modal-title" id="modalDisputeTitle">Dispute Details</h2>
+
+          <div class="modal-grid">
+            <div class="col" id="modalCol1">
+              <p><strong>Customer</strong><br><span id="modalCustomer">-</span></p>
+              <p><strong>Created Date</strong><br><span id="modalCreatedDate">-</span></p>
+              <p><strong>Associated Invoices</strong><br><span id="modalInvoices">-</span></p>
+            </div>
+
+            <div class="col" id="modalCol2">
+              <p><strong>Amount</strong><br><span id="modalAmount">-</span></p>
+              <p><strong>Open Days</strong><br><span id="modalOpenDays">-</span></p>
+              <p><strong>Dispute Owner</strong><br><span id="modalOwner">-</span></p>
+            </div>
+
+            <div class="col" id="modalCol3">
+              <p><strong>Type</strong><br><span id="modalType">-</span></p>
+              <p><strong>Status</strong><br><span id="modalStatus">-</span></p>
+            </div>
+          </div>
+
+          <!-- Description Box -->
+          <div class="section">
+            <h3>Dispute Description</h3>
+            <p id="modalDescription">
+              Dispute details will appear here.
+            </p>
+          </div>
+
+          <!-- Communication Thread -->
+          <div class="section">
+            <h3>Communication Thread</h3>
+            <div class="thread-box">
+              <div class="thread-msg">
+                <strong>SYSTEM</strong>
+                <p>Dispute ticket created</p>
+                <span class="timestamp" id="modalTimestamp">-</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ACTIONS SECTION -->
+          <div class="section">
+            <h3>Actions</h3>
+            <div class="action-row">
+              <div>
+                <label>Update Status</label>
+                <select id="statusSelect">
+                  <option>Open</option>
+                  <option>In Progress</option>
+                  <option>Pending Review</option>
+                  <option>Closed</option>
+                </select>
+              </div>
+              <div>
+                <label>Assign Team</label>
+                <select>
+                  <option>Select team</option>
+                </select>
+              </div>
+              <button class="assign-btn">Assign</button>
+            </div>
+            <div class="comment-box">
+              <textarea placeholder="Add your comment..."></textarea>
+              <button class="add-btn">Add</button>
+            </div>
+          </div>
+
+          <!-- FOOTER BUTTONS -->
+          <div class="modal-footer">
+            <button class="close-btn">Close</button>
+            <button class="email-btn">Email Customer</button>
+            <button class="close-mark">Mark as Closed</button>
+          </div>
+        </div>
+      </div> 
+
+    </section>
+  </main>
+
+  <script src="collection-script.js"></script>
+</body>
+</html>
